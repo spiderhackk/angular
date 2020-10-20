@@ -1,0 +1,49 @@
+
+ 
+
+<div class="insub">
+  <h1 style="color: indigo;text-align: center;">Products Create Inventory</h1>
+  <form [formGroup]="inGroup" (ngSubmit)="onsubmit()">
+      
+     ProductsModel:
+      <input type="text" name="ProductsModel" placeholder="ProductsModel" formControlName="ProductsModel" required="required" />
+      <div style="color: red;"
+          class="error"
+          *ngIf="inGroup.get('ProductsModel').hasError('required') && inGroup.get('ProductsModel').touched">
+          ProductsModel is required
+      </div>
+
+      ProductsName:
+      <input type="text" name="ProductsName" placeholder="ProductsName"formControlName="ProductsName" required="required" />
+      <div style="color: red;"
+      class="error"
+      *ngIf="inGroup.get('ProductsName').hasError('required') && inGroup.get('ProductsName').touched">
+      ProductsName is required
+      </div>
+      ProductsStock:
+      <input type="text" name="ProductsStock" placeholder="ProductsStock"formControlName="ProductsStock" required="required" />
+      <div style="color: red;"
+      class="error"
+      *ngIf="inGroup.get('ProductsStock').hasError('required') && inGroup.get('ProductsStock').touched">
+      ProductsStock is required
+      </div>
+      ProductsPrice:
+      <input type="text" name="ProductsPrice" placeholder="ProductsPrice"formControlName="ProductsPrice" required="required" />
+      <div style="color: red;"
+      class="error"
+      *ngIf="inGroup.get('ProductsPrice').hasError('required') && inGroup.get('ProductsPrice').touched">
+      ProductsPrice is required
+      </div>
+
+      
+      
+      <button type="submit" [disabled]="inGroup.invalid" class="btn btn-primary btn-block btn-large">Create</button>
+      <div style="text-align:center;color: lavenderblush; margin-top: 4px;">
+         
+      </div>
+     
+  </form>
+  <h2>
+    {{message}}
+  </h2>
+  <div>

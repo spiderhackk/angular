@@ -1,0 +1,27 @@
+
+<div class="card">
+    <h2 style="margin-left: 20px; margin-top: 20px;color: dodgerblue;">Register Yourself With Us</h2>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <input type="text" name="u" placeholder="Enter your email" formControlName="email" required="required" />
+        <div
+            class="error"
+            *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
+            Name is required
+        </div>
+        <input type="password" name="p" placeholder="Enter your password"formControlName="psw" required="required" />
+        <input type="number" name="p" placeholder="Enter your mobile number"formControlName="num" required="required" />
+        <input type="text" name="p" placeholder="Enter your username"formControlName="username" required="required" /><br>
+        <input type="radio" id="male" formControlName="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" formControlName="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" formControlName="gender" value="other">
+        <label for="other">Other</label>
+           
+        
+        <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary btn-block btn-large">Sign up</button>
+        <div style="text-align:center;color: lavenderblush; margin-top: 4px;">
+
+        </div>
+        </form>
+</div>

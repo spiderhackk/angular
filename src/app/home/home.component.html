@@ -1,0 +1,41 @@
+
+<ul>
+  <li><a href="">Electronics</a></li>
+  <li><a href="">Men</a></li>
+  <li><a href="">Women</a></li>
+  <li><a routerLink="" routerLinkActive="active">Kids</a></li>
+  <input  type="text" id="myInput" placeholder="Search for products item and more..." title="Type in a name">
+  <div class="dropdown">
+  <button class="dropbtn" *ngFor="let p of count"><b>{{p.username|titlecase}}</b></button>
+  <div class="dropdown-content">
+    <a href="" style="font-size: 14px;"><i style="color:royalblue" class="fa fa-user-circle"></i> My Profile</a>
+    <a href="" style="font-size: 14px;"><i style="color:royalblue" class="fa fa-folder"></i> Orders</a>
+    <a href="" style="font-size: 14px;"><i style="color:royalblue" class="fa fa-heart"></i> Wishlist</a>
+    <a href="" style="font-size: 14px;"><i style="color:royalblue" class="fa fa-wallet"></i> Wallet</a>
+    <a href="" style="font-size: 14px;"><i style="color:royalblue" class="fa fa-sign-out-alt"></i> Logout</a>
+  </div>
+</div>
+<a routerLink="/cart"><i  style="margin-left: 150px; font-size: 16px; color: white;" class="fas fa-shopping-cart"><b>  Cart</b> </i></a>
+</ul>
+  <div class="row" >
+      <div class="card" *ngFor="let i of item ; let j=index">
+        <img style="width: 140px; height: 150px;" src="{{images[j].path}}">
+          <h2 class="des" style="color:royalblue">{{i.ProductsName}}</h2>
+          <p class="price"> {{i.ProductsPrice | currency:"INR"}}</p>
+          
+          <p><button (click)="addCart(i.ProductsId)">Add to Cart</button></p>
+      </div>
+  </div>
+  <div>
+    <img class="mypic" src="assets/oppo.jpg" width="100%" height="30%">
+  </div>
+
+  
+ 
+
+  
+
+
+
+
+

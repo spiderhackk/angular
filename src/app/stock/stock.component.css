@@ -1,0 +1,25 @@
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  font-family: arial;
+  height: auto
+}
+.card button{
+  background-color:rgb(240, 74, 13);
+  border-style: none;
+  outline: 0;
+  padding: 10px;
+  cursor: pointer;
+  width: 50%;
+  font-size: 18px;
+  color: aliceblue;
+
+}
+ul{
+  cursor: pointer;
+  list-style-type:none;
+
+}
+
+
+

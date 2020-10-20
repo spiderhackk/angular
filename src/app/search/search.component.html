@@ -1,0 +1,47 @@
+<div > 
+    <div class="row" *ngFor="let i of items[0] let in=index">
+        <div  class="card" >
+            <h3 >My Cart</h3>
+            <hr style="opacity: 0.3;">
+            <div *ngFor="let j of i.ItemDetails">
+                <ul class="order">
+                    <li >
+                        <p style="color: dodgerblue;"> {{j.ProductsName}}</p> 
+                    </li>
+    
+                    <li>
+                        <p>{{j.ProductsDescription}}</p> 
+            
+                    </li>
+    
+                    <li>
+                        <p><b>{{j.ProductsPrice |currency:"INR"}}</b></p> 
+                    </li>
+    
+                    <li>
+                        <p><button><b>SAVE FOR LATER</b></button>
+                           <button (click)="remove(j.ProductsId)"><b>REMOVE</b></button>
+                        </p>
+                    </li>
+                </ul>
+                <hr style="opacity: 0.3;">
+            </div>
+        </div>
+    </div>
+    
+    <div class="card1">
+        <div class="de" *ngFor="let k of items[1]">
+            
+                <h3 style="color: grey;font-size: 15px; padding-top: 7px;">PRICE DETAILS</h3>
+                <hr>
+                <p >Price <b style="float: right; margin-right: 10px;">{{k.totalamount |currency:"INR"}}</b></p>
+                <p>Delivery Charges <b style="color: green; margin-right: 10px; float:right;font-size: 15px;">FREE</b></p>
+                <hr>
+        
+                <p >Total Amount <b style=" float: right; margin-right: 10px;">{{k.totalamount |currency:"INR"}}</b> </p>
+                <hr>
+                <button routerLink="/address">PLACE ORDER</button>
+
+    </div>
+    
+</div>

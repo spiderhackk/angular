@@ -1,0 +1,16 @@
+
+<div *ngFor="let i of address_details">
+    <div class="card" >
+        <p style="background-color: #4a77d4; color: white; height: 50px;margin-top: 15px;"><b style="margin-left: 45px;float: left; margin-top: 15px;">DELIVERY ADDRESS</b></p>
+        <div *ngFor="let j of i.add">
+            <ul>
+                <li>
+                    <span><b>{{j.firstname}}</b> ,{{j.addressType}} <a style="float: right;margin-right:10px; text-decoration: none;color:black" href=""><b>Edit</b></a></span>
+                    <p>{{j.add}},{{j.city}},{{j.state}}-{{j.zip}}</p>
+                </li>
+                <button  (click)="delivery()">DELIVERY HERE</button>
+            </ul>
+            <hr>
+        </div>
+    </div>
+</div>
