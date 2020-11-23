@@ -5,6 +5,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { isNgTemplate } from '@angular/compiler';
 import { stringify } from '@angular/compiler/src/util';
+import { Toast, ToastrService} from 'ngx-toastr';
+
+
 
 @Component({
   selector: 'app-home',
@@ -14,16 +17,23 @@ import { stringify } from '@angular/compiler/src/util';
 export class HomeComponent {
    item:any[]=[]
    images:any[]=[]
-   count:any
+   public count:number;
+   toast_message:any;
   
   
-  constructor( private search: SearchServiceService){
+  constructor( private search: SearchServiceService, private toaster:ToastrService){
     this.images=[
-      {"id":1,"path":"./assets/images/one7.jpg"},
-      {"id":2,"path":"./assets/images/iphonepro.jpg"},
-      {"id":3,"path":"./assets/images/image.jpg"},
-      {"id":3,"path":"./assets/images/applemac.jpg"}
-    ]
+      {"id":3,"path":"./assets/images/applemac.jpg"},
+      {"id":4,"path":"./assets/images/iphonepro.jpg"},
+      {"id":5,"path":"./assets/images/jeans.jpg"},
+      {"id":5,"path":"./assets/images/onepiece.jpg"},
+      {"id":6,"path":"./assets/images/realme.jpeg"},
+      {"id":7,"path":"./assets/images/tv.jpeg"},
+      {"id":8,"path":"./assets/images/nike.jpeg"},
+      {"id":9,"path":"./assets/images/sweater.jpg"},
+
+
+    ];
   }
   
   ngOnInit(){
@@ -33,14 +43,26 @@ export class HomeComponent {
     this.profile()
   }
 
-  addCart(ProductsId):void{
+  addCart(ProductsId,path):void{
     let payload={
-      ProductsId:ProductsId
+      ProductsId:ProductsId,
+      path:path
+
     }
     this.search.addCart(payload).subscribe(responce=>{responce
-      this.count++
+      this.toaster.success(responce[0])
+      let message=responce[1]
+     
+      if(message==200){
+        console.log(this.toast_message);
+        
+        this.count=responce[2]
+        localStorage.setItem("path",path)
+      }
+      else{
+        alert("Item already in cart")
+      }
     })
-    alert("Item added to cart")
     }
 
     profile(){
@@ -50,6 +72,7 @@ export class HomeComponent {
     }
    
   }
+
 
 
 

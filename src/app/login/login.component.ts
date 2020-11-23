@@ -37,9 +37,7 @@ export class LoginComponent {
       return this.router.navigate(['home'])
       }
       else{
-        this.get_message==responce[2]
         return this.router.navigate([''])
-
       }
     })
   }

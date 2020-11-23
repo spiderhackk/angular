@@ -1,8 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import '~ngx-toastr/toastr.css';  
 .header h1{
    color:red;
    text-decoration-color: black;
    
 }
+
 

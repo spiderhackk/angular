@@ -1,0 +1,65 @@
+<h1 style="color: dodgerblue;">My Order History</h1>
+<div class="row" *ngFor="let i of Order_history" >
+    <div  class="card" *ngFor="let j of i.OrderDetails">
+        <ul class="order" *ngFor="let k of j.productsDetails.ItemDetails">
+            <div *ngIf="j.orderStatus==='placed';  else elseBlock;">
+                 
+                
+                <li style="color: coral;">
+                   <b>OrderId {{j.orderid}}</b> 
+                </li>
+
+                <li>
+                  {{k.ProductsName}}
+                </li>
+
+                
+
+                <li>
+                    {{j.OrderTime|date:"short"}}
+                </li>
+
+                <li>
+                    {{k.ProductsPrice |currency:"INR"}}
+                </li>
+
+                <li style="color: forestgreen;">
+                    {{j.orderStatus|titlecase}}
+                </li>
+               
+                <button (click)=remove(j.orderid)>CANCEL THE ORDER</button>
+               
+            </div>
+
+
+            <ng-template #elseBlock>
+                <li style="color: coral;">
+                    <b>OrderId {{j.orderid}}</b> 
+                </li>
+
+                <li>
+                  {{k.ProductsName}}
+                </li>
+
+                <li>
+                    {{j.OrderTime|date:"short"}}
+                </li>
+
+                <li>
+                    {{k.ProductsPrice |currency:"INR"}}
+                </li>
+
+                <li style="color:red">
+                    {{j.orderStatus|titlecase}}
+                </li>
+            </ng-template>
+
+
+           
+        </ul>
+      
+    </div>
+  
+</div>
+
+

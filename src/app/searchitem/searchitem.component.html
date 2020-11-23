@@ -1,0 +1,31 @@
+<div class="row">
+    
+    <div class="card">
+        <h1 style="text-align: center; color: deepskyblue;">Thank You</h1>
+        <h3 style="text-align: center; color: deepskyblue;">Congratulations Your Order has been Placed Successfully</h3>
+        <p style="text-align: center;">You'll received an  email  on your registered email ID shortly</p>
+        <div>
+            <ul class="order" >
+               <td style="float: left;">
+                   <tr>Order Id </tr><br>
+
+                   <tr>Products Name </tr><br>
+
+                   <tr>Order Date </tr><br>
+
+                   <tr>Order Time </tr><br>
+
+               </td>      
+               <td *ngFor="let i of order_details[1][0].ItemDetails; let j=index" style="float: right; margin-right: 30%;">
+                    <tr *ngIf="j==0"> {{order_details[0]}} </tr><br>
+                    <tr *ngIf="j==0">{{i.ProductsName}}...</tr><br>
+
+                    <tr *ngIf="j==0">{{order_details[2]}}</tr><br>
+
+                    <tr *ngIf="j==0">{{order_details[3]}}</tr><br>
+               </td>
+            </ul>
+        </div>
+    </div>
+    <p style="text-align: center;color: red">You will automatically redirect to the home page</p>
+</div>

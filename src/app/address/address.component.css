@@ -1,0 +1,33 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 700px;
+    font-family: arial;
+    height:700px;
+    margin-left: 23%;
+    float: center;
+  }
+
+ .card input[type=text], input[type=password] ,input[type=number]{
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+    margin-left: 15px;
+  }
+  .card button{
+    border-style: none;
+    outline: 0;
+    padding: 10px;
+    cursor: pointer;
+    width:50%;
+    float:right;
+    font-size: 18px;
+    background-color: rgb(241, 84, 11);
+    color: white;
+    margin-left: 10%;
+    margin-top: 40px;
+    margin-right: 170px;
+
+  }

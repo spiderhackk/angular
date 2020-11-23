@@ -1,0 +1,22 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 550px;
+    font-family: arial;
+    height:400px;
+    position:sticky;
+    overflow: hidden;
+    margin-left: 30%;
+
+  }
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+
+  .order{
+    margin-left: 50px;
+    list-style-type: none;
+ 
+}
+
+

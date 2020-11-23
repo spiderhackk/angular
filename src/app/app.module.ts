@@ -1,4 +1,4 @@
-import { Router, RouterModule } from '@angular/router';
+import { Router, RouterModule } from "@angular/router";
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,6 +11,12 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { StockComponent } from './stock/stock.component';
 import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
+import { AddressComponent } from './address/address.component';
+import { SearchitemComponent } from './searchitem/searchitem.component';
+import { MyorderComponent } from './myorder/myorder.component';
+import { ItemDisplayComponent } from './item-display/item-display.component';
+import { ToastrModule,ToastContainerModule} from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -22,12 +28,25 @@ import { SignupComponent } from './signup/signup.component';
     InventoryComponent,
     StockComponent,
     SearchComponent,
-    SignupComponent
+    SignupComponent,
+    AddressComponent,
+    SearchitemComponent,
+    MyorderComponent,
+    ItemDisplayComponent
 ],
   imports:[
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(
+      {
+      closeButton:true,
+      timeOut:5000,
+    }
+      
+    ) ,
+    ToastContainerModule,
+    BrowserAnimationsModule,      
     HttpClientModule,
     RouterModule.forRoot([
       {path:'', component:LoginComponent},
@@ -35,7 +54,12 @@ import { SignupComponent } from './signup/signup.component';
       {path:'cart',component:SearchComponent},
       {path:"address",component:StockComponent},
       {path:'home/search',component:SearchComponent},
-      {path:"signup",component:SignupComponent}
+      {path:"signup",component:SignupComponent},
+      {path:"addAddress",component:AddressComponent},
+      {path:"paynow",component:SearchitemComponent},
+      {path:"MyOrder",component:MyorderComponent}
+
+
     ])
   ],
   providers: [],

@@ -1,16 +1,29 @@
-
 <div *ngFor="let i of address_details">
+    <button style="float: right; margin-right: 735px; margin-top: 4px;position: static;" routerLink="/addAddress">+</button>
     <div class="card" >
-        <p style="background-color: #4a77d4; color: white; height: 50px;margin-top: 15px;"><b style="margin-left: 45px;float: left; margin-top: 15px;">DELIVERY ADDRESS</b></p>
+        <p style="background-color: #4a77d4; color: white; height: 50px;margin-top: 15px;"><b style="margin-left: 45px;float: left; margin-top: 15px;">DELIVERY ADDRESS</b></p> 
         <div *ngFor="let j of i.add">
-            <ul>
-                <li>
-                    <span><b>{{j.firstname}}</b> ,{{j.addressType}} <a style="float: right;margin-right:10px; text-decoration: none;color:black" href=""><b>Edit</b></a></span>
-                    <p>{{j.add}},{{j.city}},{{j.state}}-{{j.zip}}</p>
-                </li>
-                <button  (click)="delivery()">DELIVERY HERE</button>
-            </ul>
-            <hr>
+          <ul>
+            <li>
+              {{j.firstname}}
+            </li>
+
+            <li>
+              {{j.street}}
+            </li>  
+            <li>
+              {{j.city}}
+            </li> 
+            <li>
+              {{j.zip}}
+            </li> 
+            <li>
+              {{j.state}}
+            </li> 
+            <button style="background-color: rgb(235, 12, 12); width: 40%; margin-right: 10%;" routerLink="/paynow">DELIVERY HERE</button>
+            <button style="background-color: rgb(235, 12, 12); width: 40%; margin-right: 10%;">EDIT ADDRESS</button>
+          </ul>
+          <hr>
         </div>
     </div>
-</div>
+    

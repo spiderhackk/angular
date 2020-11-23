@@ -1,28 +1,25 @@
-
-    <div class="login">
-        <h1>Login</h1>
-        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-            
-           
-            <input type="text" name="u" placeholder="Username" formControlName="email" required="required" />
-            <div
-                class="error"
-                *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
-                Name is required
-            </div>
-            <input type="password" name="p" placeholder="Password"formControlName="psw" required="required" />
-            
-            
-            <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary btn-block btn-large">Login</button>
-            <div style="text-align:center;color: lavenderblush; margin-top: 4px;">
-               
-            </div>
-           <div>
-               <p style="margin-left: 100px;">Are you a new user?<a routerLink="/signup">SignUp</a></p>
-           </div>
-        </form>
-        <div style="text-align: center;">{{get_message}}</div>
+    <div class="card">
+        <div class="login" >
+            <h1>Login</h1>
+            <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+                <input type="text" name="u" placeholder="Username" formControlName="email" required="required" />
+                <div
+                    class="error"
+                    *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
+                    Name is required
+                </div>
+                <input type="password" name="p" placeholder="Password"formControlName="psw" required="required" />
+                <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary btn-block btn-large">Login</button>
+                <div style="text-align:center;color: lavenderblush; margin-top: 4px;">
+                </div>
+               <div>
+                   <p style="margin-left: 100px; color: cornflowerblue;" >Are you a new user?<a routerLink="/signup">SignUp</a></p>
+               </div>
+            </form>
+            <div style="text-align: center;">{{get_message}}</div>
+        </div>
     </div>
+   
   
     
 

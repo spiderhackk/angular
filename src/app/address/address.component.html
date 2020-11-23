@@ -1,0 +1,43 @@
+<div class="card"> 
+    <h1 style="margin-left: 20px;">Add-Address</h1>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            
+           
+            <input type="text" name="u" placeholder="Enter Your Firstname" formControlName="firstname" required="required" />
+            <div
+                class="error"
+                *ngIf="myForm.get('firstname').hasError('required') && myForm.get('firstname').touched">
+                Name is required
+            </div>
+            <input type="text" name="p" placeholder="Enter Street"formControlName="street" required="required" />
+            <div
+                class="error"
+                *ngIf="myForm.get('street').hasError('required') && myForm.get('street').touched">
+                 street is required
+            </div>
+            <input type="text" name="p" placeholder="Enter ZipCode"formControlName="zip" required="required" />
+            <div
+                class="error"
+                *ngIf="myForm.get('zip').hasError('required') && myForm.get('zip').touched">
+                 zip is required
+            </div>
+            <input type="text" name="p" placeholder="Enter State"formControlName="state" required="required" />
+            <input type="text" name="p" placeholder="Enter Email"formControlName="email" required="required" />
+            <input type="text" name="p" placeholder="Enter City"formControlName="city" required="required" />
+            <br>
+            <input type="radio" id="male" name="gender" formControlName="gender" value="home">
+            <label for="male">Home</label>
+            <input type="radio" id="female" name="gender" formControlName="gender"value="office">
+            <label for="female">Office</label>
+            <input type="radio" id="other" name="gender" formControlName="gender"value="other">
+            <label for="other">Other</label>
+
+            
+            
+            <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary btn-block btn-large">Add Address</button>
+            <div style="text-align:center;color: lavenderblush; margin-top: 4px;">
+               
+            </div>
+        </form>
+
+</div>

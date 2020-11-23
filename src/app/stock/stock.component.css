@@ -4,13 +4,13 @@
   font-family: arial;
   height: auto
 }
-.card button{
-  background-color:rgb(240, 74, 13);
+button{
+  background-color:rgb(235, 12, 12);
   border-style: none;
   outline: 0;
   padding: 10px;
   cursor: pointer;
-  width: 50%;
+  width: 10%;
   font-size: 18px;
   color: aliceblue;
 
